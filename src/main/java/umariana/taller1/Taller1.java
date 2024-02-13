@@ -43,15 +43,23 @@ public class Taller1 {
             }
            
         case 2 -> {
-            System.out.println("==========Tareas Registradas==========");
-            for (Tarea t: misTareas)
-            {
-                System.out.println("Id: "+ t.getIdTarea());
-                System.out.println("Descripción: "+ t.getDescripcion());
-                System.out.println("Prioridad: "+ t.getPrioridad());
+            if (misTareas.isEmpty()){
+                System.out.println("No se han registrado tareas en el sistema");
+            }else{
+                System.out.println("==========Tareas Registradas==========");
+                
+                for (int i = 5; i >= 1; i--){
+                    for (Tarea tarea : misTareas){
+                        if (tarea.getPrioridad() == i){
+                            
+                            System.out.println("Id: "+ tarea.getIdTarea());
+                            System.out.println("Descripción: "+ tarea.getDescripcion());
+                            System.out.println("Prioridad: "+ tarea.getPrioridad());
+                        }
+                    }
+                }
             }
             }
-        
         case 3 -> activo=false;
         default -> {
             }
